@@ -1,0 +1,6 @@
+body {
+  @include font(default);
+  @include typi(base);
+  color: color(body);
+  background-color: color(body-bg);
+}

@@ -1,0 +1,87 @@
+// ==========================================================================
+// Typography stack
+// ==========================================================================
+
+// Defines breakpoint sizes for font size
+// ==========================================================================
+$breakpoints: (
+        small: $small,
+        medium: $medium,
+        large: $large,
+        xlarge: $xlarge
+);
+
+// Font family, weight and style
+// ==========================================================================
+$fonts: (
+        h1: (
+                family: #{'notosans-bold', Helvetica, Arial, Verdana, sans-serif},
+                weight: 300,
+                style: normal,
+        ),
+        h2: (
+                family: #{'notosans-regular', Helvetica, Arial, Verdana, sans-serif},
+                weight: 300,
+                style: normal,
+        ),
+        h3: (
+                family: #{'notosans-regular', Helvetica, Arial, Verdana, sans-serif},
+                weight: 300,
+                style: normal,
+        ),
+        h4: (
+                family: #{'notosans-regular', Helvetica, Arial, Verdana, sans-serif},
+                weight: normal,
+                style: normal,
+        ),
+        default: (
+                family: #{'notosans-regular', Helvetica, Georgia, Arial, sans-serif},
+                weight: normal,
+                style: normal,
+                italic-family: null,
+        ),
+) !global;
+
+
+// Font size
+// Based on: http://typecast.com/blog/a-more-modern-scale-for-web-typography
+// ==========================================================================
+$typi: (
+        base: (
+                null: (16px, 1.375),
+                small: (16px, 1.25),
+                medium: (16px, 1.25),
+                large: (16px, 1.375),
+                xlarge: (16px, 1.375)
+        ),
+        h1: (
+                null: (32px, 1.25),
+                small: (32px, 1.25),
+                medium: (40px, 1.125),
+                large: (48px, 1.05),
+                xlarge: (48px, 1.05),
+        ),
+        h2: (
+                null: (26px, 1.25),
+                small: (26px, 1.15384615),
+                medium: (32px, 1.25),
+                large: (36px, 1.25),
+                xlarge: (36px, 1.25),
+        ),
+        h3: (
+                null: (22px, 1.25),
+                small: (22px, 1.13636364),
+                medium: (24px, 1.25),
+                large: (28px, 1.25),
+                xlarge: (28px, 1.25),
+        ),
+        h4: (
+                null: (18px, 1.25),
+                small: (18px, 1.11),
+                medium: (18px, 1.22),
+                large: (18px, 1.22),
+                xlarge: (18px, 1.22),
+        )
+);
+
+@include typi-init;

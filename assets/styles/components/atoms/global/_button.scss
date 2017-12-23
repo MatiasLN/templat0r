@@ -1,0 +1,39 @@
+button {
+  border: 0;
+}
+
+.button {
+  border: 0;
+  font-weight: 400;
+  background: $semi-black;
+  color: $white;
+  line-height: 2em;
+  white-space: nowrap;
+  padding: 8px;
+  border-radius: 5px;
+  text-decoration: none;
+
+  &:hover {
+    font-weight: 400;
+    color: $white;
+    background: rgba(52, 56, 60, 0.9);
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: color 0.2s 0.3s, width 0.3s 0s;
+    -moz-transition: color 0.2s 0.3s, width 0.3s 0s;
+    transition: color 0.2s 0.3s, width 0.3s 0s;
+  }
+}
+
+.primary-button {
+  background: $green;
+  color: $white;
+  &:hover {
+    color: $white;
+    opacity: 0.9;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

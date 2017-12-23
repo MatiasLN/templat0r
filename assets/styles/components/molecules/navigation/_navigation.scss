@@ -1,0 +1,15 @@
+.navbar-primary {
+  @include span(12 of 12);
+  float: right;
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: rhythm(1);
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 0.5em;
+  }
+}

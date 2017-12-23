@@ -1,0 +1,44 @@
+// ==========================================================================
+// Layout Imports
+// ==========================================================================
+
+// Wrapping Container - Centers content block after tablet breakpoint
+// ==========================================================================
+.outer-container {
+  @include container;
+  @extend %clearfix;
+  width: 94%;
+  @include breakpoint($medium) {
+    $susy: (
+            columns: $numberOfColumnsWide,
+            gutters: 1/3
+    );
+    @include container(70.5em $susy); //1128 grid
+  }
+}
+
+// Inner Container - Used within outer-container div
+// ==========================================================================
+.inner-container {
+  float: left;
+  width: 100%;
+}
+
+// Default 8 column grid div
+// ==========================================================================
+.col {
+  @include breakpoint($medium){
+    @include span(8 of 12);
+  }
+}
+
+// Row container
+// ==========================================================================
+.row {
+  position: relative;
+  @extend %clearfix;
+  float: left;
+  width: 100%;
+}
+
+.g-xup {@extend %g-xup;}

@@ -1,0 +1,59 @@
+// ==========================================================================
+// Global Functions
+// ==========================================================================
+
+@function em($target, $context: $base-font-size) {
+  @if $target == 0 { @return 0 }
+  @return $target / $context + 0em;
+}
+
+@function map-fetch($map, $keys) {
+  $key: nth($keys, 1);
+  $length: length($keys);
+  $value: map-get($map, $key);
+  @if ($length > 1) {
+    $rest: ();
+    @for $i from 2 through $length {
+      $rest: append($rest, nth($keys, $i))
+    }
+    @return map-fetch($value, $rest)
+  } @else {
+    @return $value;
+  }
+}
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+@function fontFamily($key) {
+  @if map-has-key($fonts, $key) {
+    @return map-fetch($fonts, $key family);
+  }
+
+  @warn "Unknown `#{$key}` in $fonts.";
+  @return null;
+}
+
+@function fontWeight($key) {
+  @if map-has-key($fonts, $key) {
+    @return map-fetch($fonts, $key weight);
+  }
+
+  @warn "Unknown `#{$key}` in $fonts.";
+  @return null;
+}
+
+@function fontStyle($key) {
+  @if map-has-key($fonts, $key) {
+    @return map-fetch($fonts, $key style);
+  }
+
+  @warn "Unknown `#{$key}` in $fonts.";
+  @return null;
+}

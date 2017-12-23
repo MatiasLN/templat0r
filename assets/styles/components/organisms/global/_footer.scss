@@ -1,0 +1,12 @@
+.footer {
+  @include span(12 of 12);
+  background: $semi-black;
+  padding-top: rhythm(2);
+  color: $white;
+  text-align: center;
+
+  @include breakpoint($medium) {
+    text-align: left;
+  }
+}
+

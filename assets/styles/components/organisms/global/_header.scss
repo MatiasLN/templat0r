@@ -1,0 +1,9 @@
+// ORGANISM: Global Header
+// ==========================================================================
+
+
+.header {
+  margin: rhythm(2) auto;
+  @extend .outer-container;
+  width: 100%;
+}

@@ -1,0 +1,36 @@
+// ==========================================================================
+// Descriptive color variables
+// ==========================================================================
+
+$white          : #fff;
+$black          : #000;
+$semi-black     : #222;
+$grey           : #878787;
+$regent-st-blue : #add8e6;
+$river-bed      : #48525c;
+$yellow-orange  : #ffa949;
+$green          : green;
+
+// Functional color variables
+// ==========================================================================
+
+$color-primary            : $black;
+$color-secondary          : $river-bed;
+
+$color-text-base          : $white;
+$color-text-dark          : $river-bed;
+
+$color-border-light       : lighten($grey, 35%);
+$color-border-dark        : $yellow-orange;
+
+$color-link-default       : $black;
+$color-link-visited       : $grey;
+
+$color-shadow             : rgba($black,.8);
+$color-body               : $white;
+
+// Border radius
+// ==========================================================================
+
+$br: 10px;
+

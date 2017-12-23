@@ -1,0 +1,32 @@
+{
+  "name": "templat0r",
+  "description": "Starting template for quick development",
+  "main": "index.html",
+  "authors": [
+    "Matias Lie-Nielsen <matiaslienielsen@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "starter",
+    "kit"
+  ],
+  "homepage": "https://github.com/MatiasLN/templat0r",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.12",
+    "breakpoint-sass": "~2.7.0",
+    "libsass-compass-vertical-rhythm": "~1.0.0",
+    "modular-scale": "^3.0.2",
+    "reset-css": "~2.2.1",
+    "typi": "^3.1.0"
+  },
+  "devDependencies": {
+  }
+}
