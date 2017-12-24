@@ -120,7 +120,6 @@ gulp.task('watchFiles', function () {
     gulp.watch('assets/styles/**/*.scss', ['compileSass']);
     gulp.watch('assets/js/main.js', ['concatScripts']);
     gulp.watch('assets/images/*', ['images']);
-    gulp.watch('assets/images/*', ['images']);
     gulp.watch('assets/video/*', ['video']);
     gulp.watch('assets/fonts/*', ['fonts']);
     gulp.watch('./*.html').on('change', bs.reload);
