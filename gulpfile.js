@@ -125,18 +125,6 @@ gulp.task('watchFiles', function () {
     gulp.watch('./*.html').on('change', bs.reload);
 });
 
-// Deletes the build folder completely
-// ==========================================================================
-gulp.task('clean', function () {
-    del(['dist', 'dist/css/application.css*', 'dist/js/app*.js*']);
-});
-
-// Deletes the styles folder within assets completely
-// ==========================================================================
-gulp.task('clean-styles', function () {
-    del(['assets/styles']);
-});
-
 // Compile and minify build files
 // ==========================================================================
 gulp.task("build", ['minifyScripts', 'compileSass', 'images', 'video', 'fonts'], function () {
@@ -203,3 +191,24 @@ gulp.task("default", ["clean"], function () {
     gulp.start('build');
 });
 
+// ==========================================================================
+// Clean stuff
+// ==========================================================================
+
+// Deletes the build folder completely
+// ==========================================================================
+gulp.task('clean', function () {
+    del(['dist', 'dist/css/application.css*', 'dist/js/app*.js*']);
+});
+
+// Deletes the styles folder within assets completely
+// ==========================================================================
+gulp.task('clean-styles', function () {
+    del(['assets/styles']);
+});
+
+// Deletes the src folder
+// ==========================================================================
+gulp.task('clean-src', function () {
+    del(['assets/styles']);
+});
