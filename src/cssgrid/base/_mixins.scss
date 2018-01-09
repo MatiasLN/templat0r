@@ -1,0 +1,70 @@
+// ==========================================================================
+// Global Mixins
+// ==========================================================================
+
+// List Gallery - @include gallery(x of x);
+// ==========================================================================
+@mixin createListGallery($totalNumberOfColumns, $numberOfColsPrRow, $m:4) {
+  @include gallery(($totalNumberOfColumns / $numberOfColsPrRow) of $totalNumberOfColumns);
+  &:nth-child(#{"n+"}#{$numberOfColsPrRow + 1}) {
+    margin-top: rhythm($m);
+  }
+  margin-bottom: 0;
+}
+
+// Center list items
+// ==========================================================================
+@mixin center-list-items() {
+  display: table; //Allow the centering to work
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Center column
+// ==========================================================================
+@mixin center-col() {
+  float: none;
+  margin: 0 auto;
+}
+
+// Remove hyphination
+// ==========================================================================
+@mixin no-hyphination() {
+  -ms-word-break: normal;
+  word-break: normal;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+// Include all font functions
+// ==========================================================================
+@mixin font($key) {
+  font-family: fontFamily($key);
+  font-weight: fontWeight($key);
+  font-style: fontStyle($key);
+}
+
+
+// Default borders
+// ==========================================================================
+@mixin border-bottom() {
+  border-bottom: 2px solid $black;
+}
+
+@mixin border-top() {
+  border-top: 2px solid $black;
+}
+
+@mixin border-left() {
+  border-left: 2px solid $black;
+}
+
+@mixin border-right() {
+  border-right: 2px solid $black;
+}
+
+
+
+

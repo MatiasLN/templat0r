@@ -1,0 +1,8 @@
+// GRID container (create .grid wrapper div to use this)
+// ==========================================================================
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+  grid-template-rows: auto;
+}
