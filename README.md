@@ -39,6 +39,24 @@ gulp setup
 ```
 
 
+### Before you can start the project you need to install the desired design system. Options are:
+
+- The default setup 
+- Atomic Design
+- CSS GRID
+
+```
+# Default design system
+gulp regular
+
+# Atomic Design system
+gulp atomic
+
+# CSS GRID based design system
+gulp grid
+```
+
+
 ## Start project
 
 ```
