@@ -117,11 +117,11 @@ gulp.task('compileSass', function () {
 // Watch for and compile on changes
 // ==========================================================================
 gulp.task('watchFiles', function () {
-    gulp.watch('assets/styles/**/*.scss', ['compileSass']);
     gulp.watch('assets/js/main.js', ['concatScripts']);
     gulp.watch('assets/images/*', ['images']);
     gulp.watch('assets/video/*', ['video']);
     gulp.watch('assets/fonts/*', ['fonts']);
+    gulp.watch('assets/styles/**/*.scss', ['compileSass']);
     gulp.watch('./*.html').on('change', bs.reload);
 });
 
@@ -151,7 +151,7 @@ gulp.task('setup', ['clean', 'bower-install'], function () {
 
 // Select style type
 // ==========================================================================
-gulp.task('atomic', function () {
+gulp.task('atomic', ['build'], function () {
     return gulp.src("src/atomic/**/*")
         .pipe(gulp.dest('assets/styles'))
         .pipe(notify({
@@ -161,7 +161,7 @@ gulp.task('atomic', function () {
         }));
 });
 
-gulp.task('regular', function () {
+gulp.task('regular', ['build'], function () {
     return gulp.src("src/regular/**/*")
         .pipe(gulp.dest('assets/styles'))
         .pipe(notify({
@@ -171,7 +171,7 @@ gulp.task('regular', function () {
         }));
 });
 
-gulp.task('cssgrid', function () {
+gulp.task('cssgrid', ['build'], function () {
     return gulp.src("src/cssgrid/**/*")
         .pipe(gulp.dest('assets/styles'))
         .pipe(notify({
