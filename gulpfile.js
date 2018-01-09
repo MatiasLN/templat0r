@@ -78,9 +78,9 @@ gulp.task('fonts', function () {
 // ==========================================================================
 gulp.task("concatScripts", function () {
     return gulp.src([
-        'assets/js/jquery.js',
-        'assets/js/main.js'
-    ])
+            'assets/js/jquery.js',
+            'assets/js/main.js'
+        ])
         .pipe(maps.init())
         .pipe(concat('app.js'))
         .pipe(maps.write('./'))
@@ -131,6 +131,12 @@ gulp.task('clean', function () {
     del(['dist', 'dist/css/application.css*', 'dist/js/app*.js*']);
 });
 
+// Deletes the styles folder within assets completely
+// ==========================================================================
+gulp.task('clean-styles', function () {
+    del(['assets/styles']);
+});
+
 // Compile and minify build files
 // ==========================================================================
 gulp.task("build", ['minifyScripts', 'compileSass', 'images', 'video', 'fonts'], function () {
@@ -142,15 +148,50 @@ gulp.task("build", ['minifyScripts', 'compileSass', 'images', 'video', 'fonts'],
 // Install bower dependencies
 // ==========================================================================
 gulp.task('bower-install', function () {
-    return bower();
+    return bower()
+    .pipe(notify({
+        title: 'Install complete',
+        message: 'Please run "gulp atomic", "gulp regular" or "gulp cssgrid" to finish setup.',
+        onLast: true
+    }));
 });
 
 // Setup the project
 // ==========================================================================
 gulp.task('setup', ['clean', 'bower-install'], function () {
-    gulp.start('build');
 });
 
+// Select style type
+// ==========================================================================
+gulp.task('atomic', function () {
+    return gulp.src("src/atomic/**/*")
+        .pipe(gulp.dest('assets/styles'))
+        .pipe(notify({
+            title: 'Install complete',
+            message: 'Atomic design system has been installed. You can now start the project with "gulp watch". Enjoy!',
+            onLast: true
+        }));
+});
+
+gulp.task('regular', function () {
+    return gulp.src("src/regular/**/*")
+        .pipe(gulp.dest('assets/styles'))
+        .pipe(notify({
+            title: 'Install complete',
+            message: 'Default styles has been installed. You can now start the project with "gulp watch". Enjoy!',
+            onLast: true
+        }));
+});
+
+gulp.task('cssgrid', function () {
+    return gulp.src("src/cssgrid/**/*")
+        .pipe(gulp.dest('assets/styles'))
+        .pipe(notify({
+            title: 'Install complete',
+            message: 'CSS GRID styles has been installed. You can now start the project with "gulp watch". Enjoy!',
+            onLast: true
+        }));
+});
 
 // Connect Browser Sync to watch command
 // ==========================================================================

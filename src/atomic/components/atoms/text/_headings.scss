@@ -1,0 +1,27 @@
+// $fonts variable can be found in /base/_typography.scss/
+// @mixin used to pull this off can be found in /base/_mixins.scss/
+// ==========================================================================
+
+h1, h2, h3, h4 {
+  padding: vr(0.5); // value of 0.5 baseline
+}
+
+h1 {
+  @include typi(h1);
+  @include font(h1);
+}
+
+h2 {
+  @include typi(h2);
+  @include font(h2);
+}
+
+h3 {
+  @include typi(h3);
+  @include font(h3);
+}
+
+h4 {
+  @include typi(h4);
+  @include font(h4);
+}
