@@ -116,7 +116,7 @@ gulp.task('compileSass', function () {
 
 // Watch for and compile on changes
 // ==========================================================================
-gulp.task('watchFiles', function () {
+gulp.task('watchFiles', ["compileSass"], function () {
     gulp.watch('assets/js/main.js', ['concatScripts']);
     gulp.watch('assets/images/*', ['images']);
     gulp.watch('assets/video/*', ['video']);
