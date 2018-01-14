@@ -186,7 +186,7 @@ gulp.task('grid-html', function () {
         .pipe(gulp.dest('./'))
 });
 
-gulp.task('cssgrid', ['grid-styles', 'grid-html']);
+gulp.task('grid', ['grid-styles', 'grid-html']);
 
 // Connect Browser Sync to watch command
 // ==========================================================================
