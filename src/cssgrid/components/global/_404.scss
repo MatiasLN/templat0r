@@ -1,0 +1,10 @@
+.not-found {
+  @extend .outer-container;
+  width: 100%;
+  text-align: center;
+
+  h1 {
+    @include typi(h1);
+  }
+
+}

@@ -171,8 +171,8 @@ gulp.task('regular', ['build'], function () {
         }));
 });
 
-gulp.task('cssgrid', ['build'], function () {
-    return gulp.src("src/cssgrid/**/*")
+gulp.task('grid-styles', ['build'], function () {
+    return gulp.src(['src/cssgrid/**/*', '!src/cssgrid/index.html'])
         .pipe(gulp.dest('assets/styles'))
         .pipe(notify({
             title: 'Install complete',
@@ -180,6 +180,13 @@ gulp.task('cssgrid', ['build'], function () {
             onLast: true
         }));
 });
+
+gulp.task('grid-html', function () {
+    return gulp.src("src/cssgrid/index.html")
+        .pipe(gulp.dest('./'))
+});
+
+gulp.task('cssgrid', ['grid-styles', 'grid-html']);
 
 // Connect Browser Sync to watch command
 // ==========================================================================

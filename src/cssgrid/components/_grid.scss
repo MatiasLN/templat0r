@@ -1,0 +1,71 @@
+// GRID container (create .grid wrapper div to use this)
+// ==========================================================================
+
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 75px minmax(350px, 1fr) 100px;
+  grid-gap: 10px;
+}
+
+header {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+section {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+footer {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+
+
+
+
+
+// For reference
+// ==========================================================================
+
+/*
+grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+
+
+GRID area:
+
+.grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 75px minmax(350px, 1fr) 100px;
+  grid-gap: 10px;
+  grid-template-areas:
+  "header header header"
+  "main main"
+  "footer footer footer"
+}
+
+header {
+  grid-area: header;
+}
+
+section {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+
+
+
+*/
+
+
