@@ -78,12 +78,12 @@ gulp.task('fonts', function () {
 // ==========================================================================
 gulp.task("concatScripts", function () {
     return gulp.src([
-            'assets/js/jquery.js',
-            'assets/js/main.js'
-        ])
-        .pipe(maps.init())
+        'assets/js/dependencies/*.js',
+        'assets/js/*.js',
+        '!assets/js/app.js'
+    ])
         .pipe(concat('app.js'))
-        .pipe(maps.write('./'))
+        .pipe(newer('assets/js/app.js'))
         .pipe(gulp.dest('assets/js'));
 });
 
@@ -129,7 +129,7 @@ gulp.task('watchFiles', ["compileSass"], function () {
 // ==========================================================================
 gulp.task("build", ['minifyScripts', 'compileSass', 'images', 'video', 'fonts'], function () {
     return gulp.src(["assets/css/application.css", "assets/js/app.min.js",
-            "img/**", "fonts/**"], {base: './'})
+        "img/**", "fonts/**"], {base: './'})
         .pipe(gulp.dest('dist'));
 });
 
@@ -137,11 +137,11 @@ gulp.task("build", ['minifyScripts', 'compileSass', 'images', 'video', 'fonts'],
 // ==========================================================================
 gulp.task('bower-install', function () {
     return bower()
-    .pipe(notify({
-        title: 'Install complete',
-        message: 'Please run "gulp atomic", "gulp regular" or "gulp cssgrid" to finish setup.',
-        onLast: true
-    }));
+        .pipe(notify({
+            title: 'Install complete',
+            message: 'Please run "gulp atomic", "gulp regular" or "gulp cssgrid" to finish setup.',
+            onLast: true
+        }));
 });
 
 // Setup the project
