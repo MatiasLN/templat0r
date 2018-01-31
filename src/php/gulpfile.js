@@ -11,20 +11,21 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var maps = require('gulp-sourcemaps');
 var del = require('del');
-var bs = require('browser-sync').create();
+var browserSync = require('browser-sync');
 var bower = require('gulp-bower');
 var imagemin = require('gulp-imagemin');
 var newer = require('gulp-newer');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
+var php  = require('gulp-connect-php');
 
 // Browser Sync
 // ==========================================================================
-gulp.task('browser-sync', function () {
-    bs.init({
-        server: {
-            baseDir: "./"
-        }
+gulp.task('browser-sync', function() {
+    php.server({ stdio: 'ignore' /* Suppress all terminal messages */ }, function (){
+        browserSync({
+            proxy: '127.0.0.1:8000'
+        });
     });
 });
 
@@ -108,7 +109,7 @@ gulp.task('compileSass', function () {
         }))
         .pipe(maps.write('./'))
         .pipe(gulp.dest('dist/assets/css'))
-        .pipe(bs.reload(
+        .pipe(browserSync.reload(
             {stream: true}
         ));
 });
@@ -122,7 +123,9 @@ gulp.task('watchFiles', ["compileSass"], function () {
     gulp.watch('assets/video/*', ['video']);
     gulp.watch('assets/fonts/*', ['fonts']);
     gulp.watch('assets/styles/**/*.scss', ['compileSass']);
-    gulp.watch('./*.html').on('change', bs.reload);
+    gulp.watch('**/*.php', function () {
+        browserSync.reload();
+    });
 });
 
 // Compile and minify build files
