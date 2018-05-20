@@ -1,9 +1,10 @@
 # Starting template for quick setup & development
 
 ## Requirements
-- Gulp needs to be installed globally.
-- npm needs to be installed globally.
-- bower needs to be installed globally.
+
+* Gulp needs to be installed globally.
+* npm needs to be installed globally.
+* bower needs to be installed globally.
 
 ```
 # Check if Gulp is installed
@@ -21,7 +22,6 @@ bower -v
 npm install -g gulp
 ```
 
-
 ## Quick Start
 
 ```
@@ -38,12 +38,12 @@ npm install
 gulp setup
 ```
 
-
 ### Before you can start the project you need to install the desired design system. Options are:
 
-- The default setup 
-- Atomic Design
-- CSS GRID
+* The default setup
+* Atomic Design
+* CSS GRID
+* PHP mode
 
 ```
 # Default design system
@@ -54,8 +54,10 @@ gulp atomic
 
 # CSS GRID based design system
 gulp grid
-```
 
+# PHP mode
+gulp php
+```
 
 ## Start project
 
@@ -63,7 +65,6 @@ gulp grid
 # Start the local server and watch for changes on new files / excisting files.
 gulp watch
 ```
-
 
 ### Useful Gulp commands
 
