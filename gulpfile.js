@@ -45,7 +45,7 @@ function customPlumber (errTitle) {
 // ==========================================================================
 gulp.task('images', function () {
   return gulp.src('assets/images/**/*.+(png|jpg|jpeg|gif|svg)')
-    .pipe(newer('dist/assets/images/')) // Only optimize new files
+    .pipe(newer('dist/images')) // Only optimize new files
     .pipe(imagemin({
       progressive: true,
       optimazationlevels: 5, // default = 3
@@ -55,7 +55,7 @@ gulp.task('images', function () {
         { 'removeUselessStrokeAndFill': false }
       ]
     }))
-    .pipe(gulp.dest('dist/assets/images/'))
+    .pipe(gulp.dest('dist/images'))
 })
 
 // Video
@@ -63,15 +63,15 @@ gulp.task('images', function () {
 gulp.task('video', function () {
   return gulp.src('assets/video/**/*.+(mp4|webm)')
     .pipe(newer('dist/video/'))
-    .pipe(gulp.dest('dist/assets/video/'))
+    .pipe(gulp.dest('dist/video'))
 })
 
 // Copy fonts
 // ==========================================================================
 gulp.task('fonts', function () {
   return gulp.src('assets/fonts/**/*')
-    .pipe(newer('dist/assets/fonts/'))
-    .pipe(gulp.dest('dist/assets/fonts/'))
+    .pipe(newer('dist/fonts/'))
+    .pipe(gulp.dest('dist/fonts'))
 })
 
 // Merge .js files into app.js
@@ -93,7 +93,7 @@ gulp.task('minifyScripts', ['concatScripts'], function () {
   return gulp.src('assets/js/app.js')
     .pipe(uglify())
     .pipe(rename('app.min.js'))
-    .pipe(gulp.dest('dist/assets/js'))
+    .pipe(gulp.dest('dist/js'))
 })
 
 // Compile SCSS files into CSS
@@ -107,7 +107,7 @@ gulp.task('compileSass', function () {
       includePaths: ['./bower_components']
     }))
     .pipe(maps.write('./'))
-    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(gulp.dest('dist/css'))
     .pipe(bs.reload(
       { stream: true }
     ))
