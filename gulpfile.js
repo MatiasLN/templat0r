@@ -31,7 +31,7 @@ gulp.task('browser-sync', function () {
 // Custom plumber function to prevent errors
 // Also prevents stopping of running tasks on error
 // ==========================================================================
-function customPlumber (errTitle) {
+function customPlumber(errTitle) {
   return plumber({
     errorHandler: notify.onError({
       title: errTitle || 'Error running Gulp',
@@ -143,9 +143,17 @@ gulp.task('bower-install', function () {
     }))
 })
 
+// Create .gitignore file
+// ==========================================================================
+gulp.task('gitignore', function () {
+  return gulp.src('src/gitignore.txt')
+    .pipe(rename('.gitignore'))
+    .pipe(gulp.dest('./'))
+})
+
 // Setup the project
 // ==========================================================================
-gulp.task('setup', ['clean', 'bower-install'], function () {
+gulp.task('setup', ['clean', 'git', 'bower-install'], function () {
 })
 
 // Select style type

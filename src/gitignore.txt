@@ -1,0 +1,19 @@
+# ignore source folder
+src
+
+# random annoying files
+*~
+.DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+*.log
+Thumbs.db
+.htaccess
+.idea
+.sass-cache
+
+# local project dependencies
+node_modules
+bower_components
