@@ -145,7 +145,7 @@ gulp.task('bower-install', function () {
 
 // Create .gitignore file
 // ==========================================================================
-gulp.task('gitignore', function () {
+gulp.task('git', function () {
   return gulp.src('src/gitignore.txt')
     .pipe(rename('.gitignore'))
     .pipe(gulp.dest('./'))
