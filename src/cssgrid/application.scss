@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
 // ==========================================================================
-// Import Bower Dependencies
+// Import Yarn Dependencies
 // ==========================================================================
 
-@import "../../bower_components/susy/sass/susy";
-@import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
-@import '../../bower_components/libsass-compass-vertical-rhythm/lib/compass_rhythm';
-@import '../../bower_components/typi/scss/typi';
-@import '../../bower_components/reset-css/_reset';
-@import '../../bower_components/modular-scale/stylesheets/modularscale';
+@import "../../node_modules/@bower_components/susy/sass/susy";
+@import "../../node_modules/@bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../../node_modules/@bower_components/libsass-compass-vertical-rhythm/lib/compass_rhythm";
+@import "../../node_modules/@bower_components/typi/scss/typi";
+@import "../../node_modules/@bower_components/reset-css/_reset";
+@import "../../node_modules/@bower_components/modular-scale/stylesheets/modularscale";
 
 // ==========================================================================
 // Import App Config
