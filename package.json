@@ -4,7 +4,8 @@
   "description": "Starting template for quick development",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node -e \"try { require('fs').symlinkSync(require('path').resolve('node_modules/@bower_components'), 'bower_components', 'junction') } catch (e) { }\""
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,17 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "gulp-connect-php": "1.0.3"
+  },
+  "dependencies": {
+    "@bower_components/breakpoint-sass": "Team-Sass/breakpoint#~2.7.0",
+    "@bower_components/libsass-compass-vertical-rhythm": "neoeno/libsass-compass-vertical-rhythm#~1.0.0",
+    "@bower_components/modular-scale": "Team-Sass/modular-scale#^3.0.2",
+    "@bower_components/reset-css": "shannonmoeller/reset-css#~2.2.1",
+    "@bower_components/sassy-maps": "Team-Sass/Sassy-Maps#<1.0.0",
+    "@bower_components/susy": "ericam/susy#~2.2.12",
+    "@bower_components/typi": "zellwk/typi#^3.1.0"
+  },
+  "engines": {
+    "yarn": ">= 1.0.0"
   }
 }
